@@ -43,8 +43,6 @@ Elden Ring is a critically acclaimed action RPG by FromSoftware. The Shadow of t
 <summary><strong>📦 Download Your Arsenal</strong></summary>
 
 - [Download ZIP of this script and dependencies](https://github.com/briviamoon/Elden-Ring/archive/refs/heads/main.zip)
-  - *(Replace with your actual repo if you upload it!)*
-
 </details>
 
 ---
