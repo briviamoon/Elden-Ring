@@ -23,14 +23,14 @@ Automate the download of all Elden Ring: Shadow of the Erdtree repack files (Fit
 
 Elden Ring is a critically acclaimed action RPG by FromSoftware. The Shadow of the Erdtree expansion is a massive DLC, distributed in large multi-part archives (e.g., FitGirl repack). Downloading all parts manually is tedious and error-prone—this script automates the process, ensuring you get every file needed for extraction and installation.
 
-**Total download size:** ~150GB (103 files)
+**Total download size:** ~49GB (102 files)
 
 ---
 
 <details>
 <summary><strong>🚀 Features (Blessings of Grace)</strong></summary>
 
-- ⚔️ Automated batch downloads from a list of URLs (103 files: 98 main parts + 5 bonus content)
+- ⚔️ Automated batch downloads from a list of URLs (102 files: 97 main parts + 5 bonus content)
 - 🦾 Selenium + Firefox automation (headless or visible)
 - 🛡️ uBlock Origin adblocker integration
 - 🧙 Handles popups/overlays
@@ -94,7 +94,7 @@ Elden Ring is a critically acclaimed action RPG by FromSoftware. The Shadow of t
 
 - `Elden-Ring-Batch.py` — Main script
 - `ublock_origin.xpi` — uBlock Origin extension (download manually)
-- `Elden-Ring-links.txt` — List of 103 URLs (98 main + 5 bonus)
+- `Elden-Ring-links.txt` — List of 102 URLs (97 main + 5 bonus)
 - `downloads/` — Downloaded files (auto-created)
 
 ---
@@ -135,7 +135,7 @@ If only a few files are missing or failed to download:
 1. Open `Elden-Ring-links.txt` and locate the URLs for the missing parts.
 2. Open each link in Firefox (with uBlock Origin or another adblocker enabled).
 3. Click the download button manually and save the file to your `downloads/` folder.
-4. Ensure the file size matches expectations (most are ~500MB, part098 is ~41MB).
+4. Ensure the file size matches expectations (most are ~500MB, part098 is ~41MB, bonus part4 is ~427MB).
 
 This is useful if you want to avoid re-running the full batch script for just a few missing files.
 
@@ -143,8 +143,8 @@ This is useful if you want to avoid re-running the full batch script for just a 
 
 ## ⚠️ Limitations & Flaws
 
-- **Partial file handling:** The script will delete any `.part` file or final file less than 500MB (except for `part098`, which uses a 41MB threshold) before starting a new download for that URL. This ensures only complete files are kept and avoids stuck/incomplete downloads.
-- **Special case for part098:** The script treats `part098` as complete if it is at least 41MB. All other parts require at least 500MB to be considered complete.
+- **Partial file handling:** The script will delete any `.part` file or final file less than 500MB (except for `part098`, which uses a 41MB threshold, and `fg-optional-bonus-content.part4`, which uses a 427MB threshold) before starting a new download for that URL. This ensures only complete files are kept and avoids stuck/incomplete downloads.
+- **Special case for part098:** The script treats `part098` as complete if it is at least 41MB. All other parts require at least 500MB to be considered complete, except `fg-optional-bonus-content.part4`, which requires 427MB.
 - **No download resumption:** If a download is interrupted or a file is incomplete/corrupted, the script will delete the partial/incomplete file and start a new download for that part on the next run. There is no resume support for partial files.
 - **No integrity verification:** The script does not verify if a downloaded file is valid or uncorrupted. It only checks file size.
 - **Browser must remain open:** Closing Firefox before downloads finish will interrupt all downloads.

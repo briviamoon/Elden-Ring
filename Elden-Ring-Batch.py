@@ -244,9 +244,11 @@ def main():
             continue
         final_path = os.path.join(DOWNLOAD_DIR, target_filename)
         part_path = final_path + ".part"
-        # Special case for part098
+        # Special cases for file size thresholds
         if "part098" in target_filename:
             min_size_mb = 41
+        elif target_filename == "fg-optional-bonus-content.part4.rar":
+            min_size_mb = 427
         else:
             min_size_mb = 500
         # If a .part file exists and is less than threshold, treat as incomplete and delete
